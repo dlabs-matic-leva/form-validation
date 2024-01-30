@@ -1,13 +1,13 @@
 # Form validation
 
-I've always used react-hook-form and yup for form validation, but it feels heavy for what should be simple feature. 
+I've always used react-hook-form and yup for form validation, but it feels heavy for what should be a simple feature. 
 So I decided to write down list of requirements and then try to implement validation, sticking to vanilla APIs as much as possible. 
-I've used Qwik because I wanted to take it for a spin but code should be applicable to any framework. 
+I've used Qwik and Tailwind because I wanted to take them for a spin but code should be applicable to any framework. 
 
 ## Requirements
 * Don't validate until user submits the form for the first time. Then validate on every input change.
 * Show error messages below the fields they are related to. 
-* Field should be :invalid if it is invalid. 
+* Field should be `:invalid` if it is invalid. 
 * Parse and cast additional data types (`number`, `Date`)
 * Validators can be interdependent, where value of one field depends on the value of another field.
 
@@ -48,7 +48,7 @@ export default component$(() => {
   );
 });
 ```
-This is the simplest implementation, but it fails at requirement #1. Field is :invalid as soon as it loads. Interestingly, it doesn't show error message until user submits the form for the first time.
+This is the simplest implementation, but it fails at requirement #1. Field is `:invalid` as soon as it loads. Interestingly, it doesn't show error message until user submits the form for the first time.
 
 What if we use `novalidate` attribute on the form? 
 ```tsx
@@ -222,4 +222,4 @@ Again, accessing values of inputs directly is anti-pattern in React land (and pr
 
 ## Conclusion
 
-Damn, that's a lot of code. I mean, it wasn't hard to implement, but it was a lot of code just for 2 fields. Now imagine writing that for 10+ fields and with more complex validation rules... I see the value of react-hook-form and yup now.
+Damn, that's a lot of code. I mean, it wasn't hard to implement, but it was a lot of code just for 2 fields. Now imagine writing that for 10+ fields and with more complex validation rules... I see the value of react-hook-form and yup now. Complete example is in [`/src/routes/index.tsx`](src/routes/index.tsx)

@@ -26,9 +26,7 @@ export default component$(() => {
           <input
             type="text"
             name="name"
-            class={
-              "peer w-full rounded px-2 py-1 ring-1 ring-inset ring-sky-400 invalid:ring-orange-400 focus:outline-none focus:ring-2 focus:ring-sky-600 invalid:focus:ring-orange-600"
-            }
+            class="peer w-full rounded px-2 py-1 ring-1 ring-inset ring-sky-400 invalid:ring-orange-400 focus:outline-none focus:ring-2 focus:ring-sky-600 invalid:focus:ring-orange-600"
             onInput$={sync$((e: InputEvent, target: HTMLInputElement) => {
               if (!(target.form?.hasAttribute("data-was-submitted") ?? false))
                 return;
@@ -62,9 +60,7 @@ export default component$(() => {
           <input
             type="text"
             name="year"
-            class={
-              "peer w-full rounded px-2 py-1 ring-1 ring-inset ring-sky-400 invalid:ring-orange-400 focus:outline-none focus:ring-2 focus:ring-sky-600 invalid:focus:ring-orange-600"
-            }
+            class="peer w-full rounded px-2 py-1 ring-1 ring-inset ring-sky-400 invalid:ring-orange-400 focus:outline-none focus:ring-2 focus:ring-sky-600 invalid:focus:ring-orange-600"
             onInput$={sync$((e: InputEvent, target: HTMLInputElement) => {
               if (!(target.form?.hasAttribute("data-was-submitted") ?? false))
                 return;
@@ -105,7 +101,7 @@ export default component$(() => {
         </label>
 
         <br />
-        <button class={"rounded border px-2 py-1"}>Submit</button>
+        <button class="rounded border px-2 py-1">Submit</button>
       </form>
     </div>
   );
